@@ -6,6 +6,7 @@ from pandas import DataFrame
 
 class DataSource(ABC):
     def __init__(self, out_parent_dir: Path, internal_id: str):
+        self.internal_id = internal_id
         self.out_dir = out_parent_dir / internal_id
         self.raw_file = self.out_dir / 'raw.csv'
 
